@@ -1,12 +1,12 @@
 package com.newcompany;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class AddressBook {
 
     static Scanner sc = new Scanner(System.in);
-    static List<Contact> list = new LinkedList<Contact>();
+    static List<Contact> list = new ArrayList<>();
 
     //Created method for adding contact
     public static void addContact()
@@ -89,15 +89,6 @@ public class AddressBook {
         }
     }
 
-    //calling method to view contact details by using city name
-    public void viewByCity() {
-        System.out.println("Enter your City Name : ");
-        String city = sc.nextLine();
-        for (Contact list : list) {
-            if(list.getCity().equals(city))
-                System.out.println(list);
-        }
-    }
     public static void main(String[] args) {
 
         AddressBook addressBook = new AddressBook();
@@ -105,7 +96,7 @@ public class AddressBook {
         System.out.println("WELCOME TO ADDRESS BOOK PROBLEM");
         //adding multiple persons
         addPersons();
-        //Viewing details by city name
-        addressBook.viewByCity();
+        //Searching by city
+        addressBook.searchByCity();
     }
 }
