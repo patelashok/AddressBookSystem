@@ -40,6 +40,24 @@ public class AddressBook {
         Contact obj = new Contact(firstName, lastName, address, city, state, zip, phoneNo, email);
         list.add(obj);
     }
+    /*Count number of contact persons based on city*/
+    public void countBasedOnCity()
+    {
+        int count = 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter city name : ");
+        String city = sc.nextLine();
+        sc.close();
+        for (Contact list : list)
+        {
+            if (list.getCity().equals(city)) {
+                count++;
+                System.out.println(list);
+
+            }
+        }
+        System.out.println("TotalNo : " + count);
+    }
 
     //Created method for editing contact details
     public static void editContact() {
@@ -105,6 +123,6 @@ public class AddressBook {
         //adding multiple persons
         addPersons();
         //Searching by city
-        addressBook.viewByCity();
+        addressBook.countBasedOnCity();
     }
 }
